@@ -1,0 +1,12 @@
+GENERAL TOOLS — THIRD-PARTY NOTICE
+
+The distributed General Tools Extension contains or references third-party materials.
+Those materials remain governed by their own licenses and copyright notices.
+
+Known notices included in the extension package:
+- "all-in-one-tool-main V1 for everyone": BSD 3-Clause License, Copyright (c) 2025 [Rusky].
+- A preserved notice associated with Tampermonkey: Copyright 2018 Jan Biniok. All rights reserved.
+- Other bundled credit/license files are preserved inside the extension's credits/ directory.
+
+The General Tools Proprietary License applies only to General Tools-owned material
+and does not override rights or obligations in third-party licenses.

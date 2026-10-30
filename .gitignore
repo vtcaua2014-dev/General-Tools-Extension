@@ -1,0 +1,6 @@
+.env
+*.pem
+*.key
+private_packages/*.crx
+private_packages/*.xpi
+!private_packages/general-tools.zip

@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: general-tools-store
+    runtime: node
+    plan: free
+    buildCommand: ""
+    startCommand: npm start
+    envVars:
+      - key: DOWNLOAD_SIGNING_SECRET
+        generateValue: true

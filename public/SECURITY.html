@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>General Tools Store — Security</title>
+<link rel="stylesheet" href="/styles.css">
+</head><body>
+<header class="topbar"><a class="brand" href="/"><span class="brand-mark">GT</span><span>General Tools Store</span></a></header>
+<main>
+<section class="hero">
+<p class="eyebrow">SECURITY</p>
+<h1>Controlled distribution, not false promises.</h1>
+<p class="lead">Browser extensions are installed on the user's device, so their client-side code can ultimately be inspected. This store focuses on authenticity, integrity, access control, and reducing unnecessary exposure.</p>
+</section>
+<section style="padding:50px 0 90px;max-width:800px;line-height:1.75">
+<h2>Implemented protections</h2>
+<p><strong>Protected package directory.</strong> Extension files are not directly exposed as public static files.</p>
+<p><strong>Short-lived download tickets.</strong> Downloads require a server-issued HMAC token with an expiration time.</p>
+<p><strong>SHA-256 verification.</strong> The server computes and returns the expected package hash for integrity verification.</p>
+<p><strong>License acknowledgement.</strong> A user must explicitly accept the current proprietary license before requesting a package.</p>
+<p><strong>Security headers.</strong> The server sends CSP, frame protection, MIME-sniffing protection, Referrer-Policy, Permissions-Policy and HSTS when deployed over HTTPS.</p>
+<p><strong>No secrets in the frontend.</strong> Signing secrets stay in environment variables on the server.</p>
+<p><strong>No fake installation.</strong> Direct installation is only exposed when supported by Firefox signed-XPI flow or a custom Chromium integration API.</p>
+<h2 style="margin-top:40px">For extension developers</h2>
+<p>Do not place API keys, private signing keys, server credentials, or security-sensitive business logic in the extension package. Anything delivered to a user's browser should be treated as inspectable.</p>
+</section>
+</main>
+</body></html>

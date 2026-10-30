@@ -1,0 +1,24 @@
+[
+  {
+    "id": "general-tools",
+    "name": "General Tools",
+    "shortName": "GT",
+    "version": "1.0.0",
+    "category": "Utilities",
+    "description": "Games, tabs, scripts, cursors, media tools, overlays, and utilities in one unified English-language extension.",
+    "packages": {
+      "firefox": {
+        "available": false,
+        "file": "general-tools-firefox.xpi"
+      },
+      "customChromium": {
+        "available": false,
+        "file": "general-tools-chromium.crx"
+      },
+      "generic": {
+        "available": true,
+        "file": "general-tools.zip"
+      }
+    }
+  }
+]

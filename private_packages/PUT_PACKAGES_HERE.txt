@@ -1,0 +1,1 @@
+This is a placeholder package. Replace it with your real signed/packaged extension file.
