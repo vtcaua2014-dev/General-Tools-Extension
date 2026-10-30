@@ -11,6 +11,13 @@ const PACKAGES = path.join(__dirname, "private_packages");
 const CATALOG_PATH = path.join(__dirname, "catalog.json");
 const LICENSE_VERSION = "1.0";
 
+// Bind the inline stylesheet to a strict CSP hash, so the first paint works
+// even when a browser has stale CSS cached from an older deployment.
+const HTML_SHELL = fs.readFileSync(path.join(PUBLIC, "index.html"), "utf8");
+const STYLE_MATCH = HTML_SHELL.match(/<style id="gt-critical-styles">([\s\S]*?)<\/style>/);
+if (!STYLE_MATCH) throw new Error("Inline stylesheet is missing from index.html");
+const INLINE_CSS_HASH = crypto.createHash("sha256").update(STYLE_MATCH[1]).digest("base64");
+
 if (SECRET === "CHANGE-ME-IN-PRODUCTION") {
   console.warn("[SECURITY] Set DOWNLOAD_SIGNING_SECRET in production.");
 }
@@ -33,7 +40,7 @@ function headers(extra={}) {
     "X-Frame-Options":"DENY",
     "Referrer-Policy":"no-referrer",
     "Permissions-Policy":"camera=(), microphone=(), geolocation=()",
-    "Content-Security-Policy":"default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'",
+    "Content-Security-Policy":`default-src 'self'; script-src 'self'; style-src 'self' 'sha256-${INLINE_CSS_HASH}'; img-src 'self' data:; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'`,
     "Cross-Origin-Resource-Policy":"same-origin",
     "Cross-Origin-Opener-Policy":"same-origin",
     ...extra
@@ -83,7 +90,8 @@ function serveStatic(req, res, pathname) {
   const ext = path.extname(filePath);
   res.writeHead(200, headers({
     "Content-Type": mime[ext] || "application/octet-stream",
-    "Cache-Control": ext === ".html" ? "no-cache" : "public, max-age=3600"
+    "Cache-Control": "no-store, max-age=0",
+    "Pragma": "no-cache"
   }));
   fs.createReadStream(filePath).pipe(res);
   return true;
