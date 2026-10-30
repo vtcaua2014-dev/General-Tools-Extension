@@ -21,6 +21,7 @@ const mime = {
   ".js":"application/javascript; charset=utf-8",
   ".json":"application/json; charset=utf-8",
   ".txt":"text/plain; charset=utf-8",
+  ".png":"image/png",
   ".xpi":"application/x-xpinstall",
   ".crx":"application/x-chrome-extension",
   ".zip":"application/zip"
@@ -70,6 +71,9 @@ function serveStatic(req, res, pathname) {
     "/index.html": "index.html",
     "/styles.css": "styles.css",
     "/app.js": "app.js",
+    "/assets/general-tools-logo.png": "assets/general-tools-logo.png",
+    "/assets/general-tools-icon.png": "assets/general-tools-icon.png",
+    "/assets/favicon.png": "assets/favicon.png",
     "/LICENSE.txt": "LICENSE.txt",
     "/SECURITY.html": "SECURITY.html"
   };

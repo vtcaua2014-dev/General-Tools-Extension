@@ -1,81 +1,118 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="General Tools Store — independent extension distribution." />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>General Tools Store</title>
-  <link rel="stylesheet" href="/styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#08090a">
+  <meta name="description" content="General Tools Store — a carefully designed, independent home for powerful browser utilities. Explore General Tools Extension and download it securely.">
+  <meta property="og:title" content="General Tools Store — More tools. Less noise.">
+  <meta property="og:description" content="The independent extension experience. Designed for focus, made for possibility.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/assets/general-tools-logo.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/general-tools-icon.png">
+  <title>General Tools Store — More tools. Less noise.</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
 </head>
 <body>
-  <header class="topbar">
-    <a class="brand" href="/" aria-label="General Tools Store home">
-      <span class="brand-mark">GT</span>
-      <span>General Tools Store</span>
-    </a>
-    <nav>
-      <a href="#catalog">Extensions</a>
-      <a href="/LICENSE.txt" target="_blank" rel="noopener">License</a>
-      <a href="/SECURITY.html">Security</a>
-    </nav>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header" id="siteHeader">
+    <div class="nav-wrap container">
+      <a class="brand" href="#home" aria-label="General Tools Store home">
+        <img src="/assets/general-tools-icon.png" alt="" width="39" height="39">
+        <span>GENERAL<span class="brand-light">TOOLS</span><small>STORE / OFFICIAL</small></span>
+      </a>
+      <button class="mobile-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false" aria-controls="primaryNav"><span></span><span></span></button>
+      <nav class="primary-nav" id="primaryNav" aria-label="Main navigation">
+        <a href="#discover">Discover</a>
+        <a href="#features">Features</a>
+        <a href="#proposals">Proposals</a>
+        <a href="#about">About</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="nav-cta" href="#discover">Explore store <span aria-hidden="true">↗</span></a>
+    </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <p class="eyebrow">INDEPENDENT EXTENSION MARKETPLACE</p>
-      <h1>Tools without the clutter.</h1>
-      <p class="lead">
-        A minimal, black-and-white extension catalog with browser-aware installation options.
-        Automatic installation is only shown when the current browser and package actually support it.
-      </p>
-      <div class="browser-pill" id="browserPill">Detecting browser…</div>
-    </section>
-
-    <section class="toolbar" id="catalog">
-      <div>
-        <p class="eyebrow">CATALOG</p>
-        <h2>Extensions</h2>
+  <main id="main">
+    <section class="hero" id="home" aria-labelledby="heroTitle">
+      <div class="hero-noise" aria-hidden="true"></div>
+      <div class="hero-grid container">
+        <div class="hero-copy">
+          <p class="eyebrow intro-up"><span class="status-dot"></span> THE INDEPENDENT EXTENSION EXPERIENCE <span class="eyebrow-number">/ 001</span></p>
+          <h1 class="intro-up" id="heroTitle">More tools.<br><span class="outlined-type">Less noise.</span></h1>
+          <p class="hero-desc intro-up">Your browser, reimagined. Discover a smarter way to work, create, and play — with the utilities you need, all in one place.</p>
+          <div class="hero-actions intro-up"><a href="#discover" class="button button-dark">Explore the extension <span>↗</span></a><a href="#about" class="text-link">Discover our vision <span>↗</span></a></div>
+          <div class="hero-proof intro-up"><span class="proof-icon">✦</span><div><b>One extension. Multiple possibilities.</b><small>Independent · Free to use · Chromium-focused</small></div></div>
+        </div>
+        <div class="hero-art intro-up" id="heroArt" aria-label="General Tools Extension brand visual">
+          <div class="art-grid" aria-hidden="true"></div>
+          <div class="orbit orbit-one" aria-hidden="true"></div><div class="orbit orbit-two" aria-hidden="true"></div>
+          <div class="art-corner top-left" aria-hidden="true">01 / GT</div><div class="art-corner bottom-right" aria-hidden="true">EXPLORE DIFFERENTLY ↗</div>
+          <div class="hero-brand-card"><img src="/assets/general-tools-logo.png" alt="General Tools original black-and-white geometric logo" width="420" height="420"></div>
+          <div class="float-label label-one"><span class="mini-circle"></span> ALL-IN-ONE TOOLKIT</div>
+          <div class="float-label label-two">DESIGNED TO DO MORE <span>↗</span></div>
+          <div class="orbit-dot dot-one" aria-hidden="true"></div><div class="orbit-dot dot-two" aria-hidden="true"></div>
+        </div>
       </div>
-      <input id="search" type="search" placeholder="Search extensions…" autocomplete="off" />
+      <div class="hero-bottom container"><span>SCROLL TO EXPLORE</span><span class="scroll-line" aria-hidden="true"></span><span id="browserPill">DETECTING BROWSER…</span></div>
     </section>
 
-    <section id="extensionGrid" class="grid" aria-live="polite"></section>
+    <div class="marquee" aria-hidden="true"><div class="marquee-track"><span>SIMPLIFY YOUR BROWSER</span><i>✳</i><span>EXPAND YOUR POSSIBILITIES</span><i>✳</i><span>DESIGNED FOR EVERYDAY USE</span><i>✳</i><span>SIMPLIFY YOUR BROWSER</span><i>✳</i><span>EXPAND YOUR POSSIBILITIES</span><i>✳</i><span>DESIGNED FOR EVERYDAY USE</span><i>✳</i></div></div>
+
+    <section class="section intro-section container" id="features">
+      <div class="section-header reveal"><p class="eyebrow">01 / WHY GENERAL TOOLS</p><h2>Everything connected.<br><em>Nothing complicated.</em></h2><p>We believe a better browsing experience should feel effortless. Powerful utilities, considered design, and control over your workflow.</p></div>
+      <div class="benefit-grid">
+        <article class="benefit-card reveal"><div class="benefit-symbol">↗</div><span class="benefit-count">01</span><h3>One unified space.</h3><p>Keep your essential browser tools in one organized interface, instead of switching between disconnected extensions.</p><span class="feature-detail">LESS CLUTTER / MORE FOCUS</span></article>
+        <article class="benefit-card dark-card reveal"><div class="benefit-symbol">◎</div><span class="benefit-count">02</span><h3>Built around you.</h3><p>Configure the tools you use, personalize your experience, and give your browser a workflow that makes sense.</p><span class="feature-detail">CONTROL / FLEXIBILITY</span></article>
+        <article class="benefit-card reveal"><div class="benefit-symbol">✳</div><span class="benefit-count">03</span><h3>Made to evolve.</h3><p>A community-driven project that values responsible development, thoughtful improvements, and fresh ideas.</p><span class="feature-detail">IDEAS / PROGRESS</span></article>
+      </div>
+    </section>
+
+    <section class="showcase" id="discover">
+      <div class="container">
+        <div class="section-header showcase-head reveal"><div><p class="eyebrow">02 / EXTENSION LIBRARY</p><h2>Meet your<br><em>next essential.</em></h2></div><p>Explore real, available downloads. Every installation route is presented honestly according to your browser.</p></div>
+        <div class="catalog-controls reveal"><label class="search-field"><span aria-hidden="true">⌕</span><input type="search" id="search" placeholder="Search our collection" aria-label="Search extensions"><kbd>/</kbd></label><span class="catalog-count" id="catalogCount">01 EXTENSION</span></div>
+        <div class="extension-grid" id="extensionGrid" aria-live="polite"></div>
+        <div class="catalog-footer reveal"><span><span class="status-dot"></span> Carefully curated, not crowded.</span><span>New additions will appear here when available.</span></div>
+      </div>
+    </section>
+
+    <section class="section roadmap container" id="proposals">
+      <div class="section-header reveal"><p class="eyebrow">03 / THE ROAD AHEAD</p><h2>Built today.<br><em>Imagined for tomorrow.</em></h2><p>Ideas we're exploring for future development. These are proposals, not promised or released features.</p></div>
+      <div class="roadmap-grid">
+        <article class="roadmap-card reveal"><span class="proposal-tag">PROPOSAL / 01</span><div class="roadmap-icon">⊞</div><h3>Smarter workspaces</h3><p>More flexible organization and presets for a workspace that adapts to your browsing habits.</p><span class="status-note">CONCEPT UNDER CONSIDERATION ↗</span></article>
+        <article class="roadmap-card reveal"><span class="proposal-tag">PROPOSAL / 02</span><div class="roadmap-icon">◉</div><h3>More refined overlays</h3><p>Explore additional on-page widgets, visibility controls, and easier layout customization.</p><span class="status-note">CONCEPT UNDER CONSIDERATION ↗</span></article>
+        <article class="roadmap-card reveal"><span class="proposal-tag">PROPOSAL / 03</span><div class="roadmap-icon">⌘</div><h3>Broader compatibility</h3><p>Research reliable ways to improve the experience across different browsers and devices.</p><span class="status-note">CONCEPT UNDER CONSIDERATION ↗</span></article>
+      </div>
+      <p class="roadmap-disclaimer reveal">We value constructive feedback and responsible collaboration. Future releases and compatibility will be announced only after they are ready.</p>
+    </section>
+
+    <section class="about-section" id="about">
+      <div class="container about-grid">
+        <div class="about-visual reveal"><div class="about-visual-inner"><span class="about-symbol" aria-hidden="true">G<span>T</span></span><div class="about-ring ring-a" aria-hidden="true"></div><div class="about-ring ring-b" aria-hidden="true"></div><span class="about-visual-footer">GENERAL TOOLS <span>© 2026</span></span></div></div>
+        <div class="about-text reveal"><p class="eyebrow">04 / ABOUT THE PROJECT</p><h2>Built for people<br>who <em>do more.</em></h2><p class="about-lead">General Tools Extension is a multifunctional browser extension designed to provide users with a centralized, accessible, and efficient collection of utilities within a single environment.</p><p>Developed with an emphasis on simplicity, functionality, and customization, General Tools aims to streamline everyday browsing activities while maintaining a modern and intuitive user experience.</p><p>Our mission is to create a reliable, versatile, and continuously evolving extension. The project values accessibility, efficiency, innovation, responsible software development, and community feedback.</p><p>General Tools is a collaborative development initiative. Contributions and third-party components are included only where applicable permissions and licenses allow, with respect for developers and intellectual property rights.</p><div class="about-principles"><span>ACCESSIBILITY</span><span>EFFICIENCY</span><span>INNOVATION</span></div><a class="text-link about-license" href="/LICENSE.txt" target="_blank" rel="noopener">Read the software license <span>↗</span></a></div>
+      </div>
+    </section>
+
+    <section class="section trust container" id="security">
+      <div class="trust-strap reveal"><div><p class="eyebrow">05 / TRANSPARENT DISTRIBUTION</p><h2>Designed with<br><em>trust in mind.</em></h2></div><p>Secure delivery should be understandable. Our store uses temporary download links and publishes clear installation guidance instead of pretending every browser can install extensions automatically.</p></div>
+      <div class="trust-row reveal"><div><b>01 / License-first downloads</b><span>Review the license before requesting a package.</span></div><div><b>02 / Package integrity</b><span>Server-side SHA-256 hash and signed, expiring download links.</span></div><div><b>03 / Honest compatibility</b><span>Installation paths reflect each browser's actual capabilities.</span></div></div>
+      <a href="/SECURITY.html" class="text-link trust-link">Read our security overview <span>↗</span></a>
+    </section>
+
+    <section class="faq-section" id="faq"><div class="container faq-grid"><div class="reveal"><p class="eyebrow">06 / GOOD TO KNOW</p><h2>Questions?<br><em>Answered.</em></h2><p class="faq-subtitle">Clear answers before you download.</p></div><div class="faq-list reveal"><details><summary>Is General Tools free to use? <span>+</span></summary><p>Yes. The extension is available as a free download. Free use does not automatically grant permission to republish, modify, or redistribute proprietary parts of the project.</p></details><details><summary>Does the site install into Chrome automatically? <span>+</span></summary><p>No. A normal external website cannot directly install an extension into standard Google Chrome. For Chrome, the store offers a ZIP package and instructions for manual installation.</p></details><details><summary>What about Firefox and custom Chromium? <span>+</span></summary><p>Firefox supports website installation of Mozilla-signed XPI extensions, but no signed Firefox build is currently provided. A custom Chromium browser can install directly if its owner implements a trusted native installation integration. Neither option is currently advertised as available without a compatible package.</p></details><details><summary>Can someone view extension code after installing it? <span>+</span></summary><p>Yes. Browser extensions run on users' devices, so packaged client-side code may be inspected. License terms and controlled distribution offer protections, but cannot make installed code invisible.</p></details><details><summary>Does General Tools contain third-party components? <span>+</span></summary><p>Some elements are based on or incorporate third-party materials. Their original licensing requirements remain in effect. See the applicable notices included with the extension.</p></details></div></div></section>
+
+    <section class="closing-section"><div class="container closing-inner reveal"><p class="eyebrow">THE NEXT CHAPTER STARTS HERE</p><h2>Make more room<br>for <em>possibility.</em></h2><div class="closing-actions"><a href="#discover" class="button button-light">Discover General Tools <span>↗</span></a><a href="#about" class="closing-small">Learn about our mission ↑</a></div><div class="closing-watermark" aria-hidden="true">GT.</div></div></section>
   </main>
 
-  <dialog id="licenseDialog">
-    <form method="dialog" class="dialog-card">
-      <div class="dialog-head">
-        <div>
-          <p class="eyebrow">LICENSE REQUIRED</p>
-          <h3>Before downloading</h3>
-        </div>
-        <button class="icon-btn" value="cancel" aria-label="Close">×</button>
-      </div>
+  <footer class="site-footer"><div class="container footer-top"><a href="#home" class="footer-brand"><img src="/assets/general-tools-icon.png" alt="" width="48" height="48"> <span>GENERAL TOOLS<br><small>INDEPENDENT EXTENSION STORE</small></span></a><div class="footer-links"><a href="#discover">Discover</a><a href="#features">Features</a><a href="#proposals">Proposals</a><a href="#about">About</a><a href="/LICENSE.txt" target="_blank" rel="noopener">License</a><a href="/SECURITY.html">Security</a></div></div><div class="container footer-bottom"><span>© 2026 GENERAL TOOLS. ALL RIGHTS RESERVED WHERE APPLICABLE.</span><span>INDEPENDENT PROJECT / NOT AFFILIATED WITH ANY BROWSER STORE</span><a href="#home" aria-label="Back to top">BACK TO TOP ↑</a></div></footer>
 
-      <p class="muted">
-        General Tools is proprietary software. Installing or downloading does not transfer ownership
-        of the source code or grant permission to copy, republish, resell, modify, reverse engineer,
-        or redistribute it except where applicable law or a third-party license requires otherwise.
-      </p>
+  <dialog id="licenseDialog" class="license-modal" aria-labelledby="licenseTitle"><div class="modal-shell"><div class="modal-header"><div><p class="eyebrow">BEFORE YOU CONTINUE</p><h2 id="licenseTitle">Download General Tools</h2></div><button class="close-modal" id="closeLicense" type="button" aria-label="Close dialog">×</button></div><p class="modal-browser" id="modalBrowser"></p><p class="modal-description">General Tools is licensed software. Downloads are provided through a temporary, protected link. Read the terms before continuing.</p><div class="license-notice"><b>General Tools Proprietary License v1.0</b><p>Downloading does not grant permission to republish, modify, or redistribute the proprietary components without authorization, except where applicable law or third-party licenses permit otherwise.</p><a href="/LICENSE.txt" target="_blank" rel="noopener">Read the complete license ↗</a></div><label class="accept-row"><input type="checkbox" id="acceptLicense"><span>I have read and agree to the General Tools Proprietary License.</span></label><div class="modal-footer"><button class="button button-outline" id="cancelLicense" type="button">Cancel</button><button class="button button-dark" id="continueDownload" type="button" disabled>Continue <span>→</span></button></div><div id="modalStatus" class="modal-status" aria-live="polite"></div></div></dialog>
 
-      <label class="check-row">
-        <input id="acceptLicense" type="checkbox" />
-        <span>I have read and agree to the General Tools Proprietary License.</span>
-      </label>
-
-      <div class="dialog-actions">
-        <button class="btn secondary" value="cancel">Cancel</button>
-        <button id="continueDownload" class="btn primary" type="button" disabled>Continue</button>
-      </div>
-    </form>
-  </dialog>
-
-  <footer>
-    <span>© 2026 General Tools</span>
-    <span>Independent distribution • Security-first design</span>
-  </footer>
-
-  <script src="/app.js" defer></script>
+  <dialog class="guide-modal" id="installGuide" aria-labelledby="guideTitle"><div class="modal-shell"><div class="modal-header"><div><p class="eyebrow">INSTALLATION GUIDE</p><h2 id="guideTitle">Install on Chrome / Chromium</h2></div><button id="closeGuide" class="close-modal" type="button" aria-label="Close guide">×</button></div><ol><li>Download the official extension ZIP from this store.</li><li>Extract the ZIP to a folder you can keep on your computer.</li><li>Visit <code>chrome://extensions</code> in your browser.</li><li>Enable <b>Developer mode</b>.</li><li>Click <b>Load unpacked</b> and select the folder containing <code>manifest.json</code>.</li></ol><p class="modal-description">Do not delete or move that folder while the extension is installed. Standard Chrome does not support direct installation from this independent website.</p><button class="button button-dark" id="gotIt" type="button">Got it <span>✓</span></button></div></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 </body>
 </html>

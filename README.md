@@ -115,3 +115,10 @@ CRX and Firefox XPI are intentionally disabled until valid signed packages are s
 9. Deploy.
 
 Do not make the repository public if your goal is to avoid exposing the extension archive.
+
+
+## 2026 visual redesign
+
+This release includes the original General Tools artwork and favicon extracted from the extension itself, animated editorial landing page, About and proposals sections, FAQ, mobile menu, responsive catalog, and accessibility preferences. The proposal cards explicitly describe future concepts, not active functionality.
+
+Static brand assets are served from `public/assets/`; their source is the bundled extension package. The protected download flow and proprietary license remain unchanged.
