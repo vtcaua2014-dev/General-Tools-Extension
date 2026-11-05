@@ -122,3 +122,7 @@ Do not make the repository public if your goal is to avoid exposing the extensio
 This release includes the original General Tools artwork and favicon extracted from the extension itself, animated editorial landing page, About and proposals sections, FAQ, mobile menu, responsive catalog, and accessibility preferences. The proposal cards explicitly describe future concepts, not active functionality.
 
 Static brand assets are served from `public/assets/`; their source is the bundled extension package. The protected download flow and proprietary license remain unchanged.
+
+
+## Version 1.1.0
+The protected package `private_packages/general-tools.zip` contains General Tools Extension v1.1.0 in English. The catalog has been updated to match. Supports unified stopwatch and WASD layout.
