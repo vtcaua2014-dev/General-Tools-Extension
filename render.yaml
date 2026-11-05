@@ -3,8 +3,10 @@ services:
     name: general-tools-store
     runtime: node
     plan: free
-    buildCommand: ""
+    branch: main
+    buildCommand: npm install
     startCommand: npm start
+    autoDeployTrigger: commit
     envVars:
       - key: DOWNLOAD_SIGNING_SECRET
         generateValue: true
