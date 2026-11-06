@@ -124,5 +124,7 @@ This release includes the original General Tools artwork and favicon extracted f
 Static brand assets are served from `public/assets/`; their source is the bundled extension package. The protected download flow and proprietary license remain unchanged.
 
 
-## Version 1.1.0
-The protected package `private_packages/general-tools.zip` contains General Tools Extension v1.1.0 in English. The catalog has been updated to match. Supports unified stopwatch and WASD layout.
+## Version 1.1.1
+The protected package `private_packages/general-tools.zip` contains General Tools Extension v1.1.1 in English. The catalog has been updated to match. Supports unified stopwatch and WASD layout.
+
+LiveSplit Lite controls: P or Q (Start / Running / Paused / Restart); E or Split button registers a split.

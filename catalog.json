@@ -3,9 +3,9 @@
     "id": "general-tools",
     "name": "General Tools",
     "shortName": "GT",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "category": "Utilities",
-    "description": "General Tools 1.1.0: unified stopwatch with LiveSplit, Chrono, Floating Clock and Lite layouts, WASD-shaped keystrokes, plus tabs, media, scripts, overlays and more.",
+    "description": "General Tools 1.1.1: LiveSplit Lite timer with P/Q controls and Split (E), customizable keystrokes, MIT-licensed cursor gallery, Discord access and more.",
     "packages": {
       "firefox": {
         "available": false,

@@ -1,12 +1,2 @@
-GENERAL TOOLS STORE — BUNDLED RELEASE
-
-Bundled extension:
-- General Tools Extension v1.0.0
-- Language: English
-- Old Portuguese LEIA-ME removed
-- JavaScript syntax checks passed before packaging
-
-Protected package path:
-private_packages/general-tools.zip
-
-The store serves the package through its protected download-ticket flow.
+General Tools Extension v1.1.1
+The bundled ZIP contains the LiveSplit Lite update, key picker, cursor presets and Discord shortcut.
