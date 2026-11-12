@@ -31,3 +31,11 @@
 .hero-brand-card{background:#fff;box-shadow:0 34px 100px #00000023;overflow:hidden}
 .hero-brand-card img{width:100%;height:100%;object-fit:contain;image-rendering:auto}
 @media(max-width:600px){.hero-brand-card{height:65%;max-width:78%}}
+
+
+.hero{background:radial-gradient(ellipse at 76% 34%,#e9ebe9,#fafaf8 74%)}.hero-art{perspective:1200px;transform-style:preserve-3d}
+.hero-brand-card{transform:perspective(1100px) rotateX(5deg) rotateY(-8deg) translateZ(30px);box-shadow:27px 40px 75px #00000025;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.hero-art:hover .hero-brand-card{transform:perspective(1100px) rotateX(-2deg) rotateY(4deg) translateZ(45px)}
+.benefit-card,.roadmap-card{transition:transform .4s,box-shadow .4s}
+.benefit-card:hover,.roadmap-card:hover{transform:perspective(900px) rotateX(2deg) rotateY(-2deg) translateY(-8px);box-shadow:0 25px 55px #00000018}
+@media(hover:none),(prefers-reduced-motion:reduce){.hero-brand-card,.hero-art:hover .hero-brand-card,.benefit-card:hover,.roadmap-card:hover{transform:none!important}}

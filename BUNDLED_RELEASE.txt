@@ -1,2 +1,1 @@
-General Tools Extension v1.1.1
-The bundled ZIP contains the LiveSplit Lite update, key picker, cursor presets and Discord shortcut.
+General Tools v2.0.0: independent browser utilities, polished Store, compact overlays.
