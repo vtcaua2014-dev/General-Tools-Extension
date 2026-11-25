@@ -1,0 +1,69 @@
+GENERAL TOOLS PROPRIETARY LICENSE
+Version 1.0 — October 29, 2026
+
+Copyright © 2026 General Tools Contributors.
+All rights reserved except as expressly granted below.
+
+1. SCOPE
+This license applies only to software, source code, assets, documentation, and other material for which the General Tools copyright holders possess the necessary rights to license ("General Tools Materials").
+
+Third-party components remain governed by their own licenses. Nothing in this license cancels, overrides, or restricts rights granted by a valid third-party license or applicable law.
+
+2. PERMITTED USE
+Subject to this license, you are granted a limited, personal, non-exclusive, non-transferable, revocable license to:
+(a) download and install authorized General Tools releases;
+(b) use the software for its intended purpose;
+(c) create backups solely as reasonably necessary for that permitted use.
+
+No ownership rights are transferred.
+
+3. RESTRICTIONS
+Except where expressly permitted by applicable law or a controlling third-party license, you may not, without prior written authorization from the applicable rights holder:
+(a) copy or republish General Tools source code;
+(b) redistribute, resell, sublicense, rent, lease, or commercially distribute the software;
+(c) publish modified, forked, rebranded, or derivative versions;
+(d) remove copyright, attribution, license, security, or authenticity notices;
+(e) falsely represent an unofficial build as an official General Tools release;
+(f) use General Tools trademarks, names, logos, or visual identity in a manner that suggests endorsement or affiliation;
+(g) bypass access controls, package-integrity mechanisms, licensing checks, or distribution protections for the purpose of unauthorized copying or redistribution.
+
+4. MODIFICATION
+Private modification is not licensed unless separately authorized in writing, except to the extent modification is permitted by applicable law or by the license of a specific third-party component.
+
+5. REVERSE ENGINEERING
+Reverse engineering, decompilation, disassembly, or source reconstruction is not licensed except where such restriction is prohibited by applicable law.
+
+This clause does not limit lawful security research, interoperability rights, or rights granted under a controlling open-source license.
+
+6. THIRD-PARTY MATERIAL
+General Tools may contain open-source or separately licensed components. Those components retain their original copyright notices and license terms. Where a third-party license grants broader rights than this license, those broader rights apply to that component only.
+
+7. DISTRIBUTION AND OFFICIAL BUILDS
+Only builds distributed through channels expressly designated by General Tools may be represented as official releases.
+
+Possession of an installable package does not grant redistribution rights.
+
+8. SECURITY AND INTEGRITY
+General Tools may use cryptographic hashes, signed metadata, access-controlled distribution, expiring download links, and other reasonable mechanisms to verify package integrity and official distribution.
+
+These controls are intended to protect users and the project from tampering and unauthorized redistribution. They do not authorize collection of passwords, private credentials, or unrelated personal data.
+
+9. CONTRIBUTIONS
+A contribution is accepted only if the contributor has the necessary rights to submit it. Separate contributor terms may apply. Third-party code must be identified and must retain required notices.
+
+10. TERMINATION
+Rights granted under this license terminate automatically if you materially violate its terms. Upon termination, you must cease unauthorized use and distribution of General Tools Materials.
+
+11. DISCLAIMER
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, TO THE MAXIMUM EXTENT PERMITTED BY LAW.
+
+12. LIMITATION OF LIABILITY
+TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE COPYRIGHT HOLDERS AND CONTRIBUTORS WILL NOT BE LIABLE FOR INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING FROM USE OF THE SOFTWARE.
+
+13. NO WAIVER OF MANDATORY RIGHTS
+Nothing in this license removes rights that cannot lawfully be waived or restricted.
+
+14. CONTACT / PERMISSIONS
+Requests for redistribution, modification, commercial use, or other permissions should be submitted through an official General Tools contact channel.
+
+END OF LICENSE

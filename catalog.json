@@ -1,0 +1,24 @@
+[
+  {
+    "id": "general-tools",
+    "name": "General Tools",
+    "shortName": "GT",
+    "version": "2.0.0",
+    "category": "Utilities",
+    "description": "General Tools 2.0: compact LiveSplit Lite, FPS and keystrokes with image editing and browser utilities.",
+    "packages": {
+      "firefox": {
+        "available": false,
+        "file": "general-tools-firefox.xpi"
+      },
+      "customChromium": {
+        "available": false,
+        "file": "general-tools-chromium.crx"
+      },
+      "generic": {
+        "available": true,
+        "file": "general-tools.zip"
+      }
+    }
+  }
+]
