@@ -1,4 +1,5 @@
-name: Deploy General Tools Store to GitHub Pages
+name: Build and publish General Tools Store (GitHub Pages)
+
 on:
   push:
     branches: [main]
@@ -6,37 +7,50 @@ on:
       - public/**
       - private_packages/general-tools.zip
       - catalog.json
+      - THIRD_PARTY_NOTICES.txt
       - scripts/build-pages.py
       - .github/workflows/pages.yml
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 concurrency:
   group: general-tools-pages
   cancel-in-progress: false
 
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Build static site and verify extension ZIP
-        run: python3 scripts/build-pages.py
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
+      - name: Checkout General Tools v2.0
+        uses: actions/checkout@v4
         with:
-          path: _pages_site
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: https://vtcaua2014-dev.github.io/General-Tools-Extension/
-    steps:
-      - name: Publish to GitHub Pages
-        uses: actions/deploy-pages@v4
+          persist-credentials: true
+      - name: Build and validate static site
+        run: python3 scripts/build-pages.py
+      - name: Update gh-pages branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          export SITE_TEMP="$RUNNER_TEMP/general-tools-pages"
+          mkdir -p "$SITE_TEMP"
+          cp -a _pages_site/. "$SITE_TEMP/"
+          git config user.name "General Tools Pages"
+          git config user.email "actions@users.noreply.github.com"
+          git fetch origin gh-pages:refs/remotes/origin/gh-pages || true
+          if git show-ref --verify --quiet refs/remotes/origin/gh-pages; then
+            git checkout -B gh-pages refs/remotes/origin/gh-pages
+          else
+            git checkout --orphan gh-pages
+            git rm -rf . || true
+          fi
+          find . -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
+          cp -a "$SITE_TEMP/." .
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No Pages content changes"
+          else
+            git commit -m "Publish General Tools Store v2.0 to GitHub Pages"
+            git push origin gh-pages
+          fi
