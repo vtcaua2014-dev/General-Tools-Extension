@@ -1,0 +1,42 @@
+name: Deploy General Tools Store to GitHub Pages
+on:
+  push:
+    branches: [main]
+    paths:
+      - public/**
+      - private_packages/general-tools.zip
+      - catalog.json
+      - scripts/build-pages.py
+      - .github/workflows/pages.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: general-tools-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build static site and verify extension ZIP
+        run: python3 scripts/build-pages.py
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _pages_site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: https://vtcaua2014-dev.github.io/General-Tools-Extension/
+    steps:
+      - name: Publish to GitHub Pages
+        uses: actions/deploy-pages@v4
